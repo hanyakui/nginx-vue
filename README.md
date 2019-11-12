@@ -38,9 +38,8 @@
 
 编辑nginx.conf 配置文件如下
 ```
-### 2.1.Vue-cli项目在部署后如何在nginx配置反向代理
-```  
-nginx.conf配置如下 
+### 2.1.nginx.conf配置如下
+```   
     server {
         listen       10086;
         server_name  localhost;  
