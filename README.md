@@ -47,6 +47,7 @@
         location  / {
             root   F:\Code\luolong\dist; //指向dist文件夹
             index  index.html index.htm;
+            try_files $uri $uri/ /index.html; ///404的问题
         }
 
         location /mapBaseUrl {
