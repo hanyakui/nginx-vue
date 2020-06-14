@@ -45,15 +45,17 @@
         server_name  localhost;  
 
         location  / {
-            root   F:\Code\luolong\dist; //指向dist文件夹
+            root   F:\Code\luolong\dist; #指向dist文件夹
             index  index.html index.htm;
-            try_files $uri $uri/ /index.html; ///404的问题
+            try_files $uri $uri/ /index.html; #404的问题
         }
 
         location /mapBaseUrl {
-             rewrite  ^.+mapBaseUrl/?(.*)$ /$1 break;
+             # rewrite  ^.+mapBaseUrl/?(.*)$ /$1 break;
+             # 不要重写
              include  uwsgi_params; 
-             proxy_pass http://117.159.25.*2:18983;  
+             proxy_pass http://117.159.25.*2:18983; 
+             # 云服务器内网地址 
         }
 
         location /threeDTiles {
